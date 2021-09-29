@@ -1,0 +1,18 @@
+type Team
+  @model
+  @auth(
+    rules: [
+      { allow: public, operations: [read] }
+      { allow: private, provider: iam, operations: [create, update] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  description: String
+  healthStatus: HEALTH_STATUS!
+}
+
+enum HEALTH_STATUS {
+  HEALTHY
+  UNHEALTHY
+}

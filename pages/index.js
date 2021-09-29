@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 export default function Home() {
   const [teams, setTeams] = useState([
     {
@@ -8,6 +8,12 @@ export default function Home() {
       healthStatus: 'HEALTHY',
     },
   ])
+
+  useEffect(() => {
+    // todo: fetch the latest Teams
+    // todo: setup subscription to listen for changes
+    // ! unsubscribe when the component goes away
+  }, [])
   return (
     <div style={{ width: '60vw', margin: '0 auto' }}>
       <h1 style={{ textAlign: 'center' }}>Public Outage Service</h1>
