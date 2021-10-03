@@ -8,7 +8,7 @@ type Team
   ) {
   id: ID!
   name: String!
-  description: String
+  description: String!
   healthStatus: HEALTH_STATUS!
 }
 
