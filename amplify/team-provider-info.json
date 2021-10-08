@@ -1,15 +1,15 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-outageservice-dev-01922-authRole",
-      "UnauthRoleArn": "arn:aws:iam::521776702104:role/amplify-outageservice-dev-01922-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::521776702104:role/amplify-outageservice-dev-01922-authRole",
+      "AuthRoleName": "amplify-outageservice-dev-135151-authRole",
+      "UnauthRoleArn": "arn:aws:iam::936471194299:role/amplify-outageservice-dev-135151-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::936471194299:role/amplify-outageservice-dev-135151-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-outageservice-dev-01922-deployment",
-      "UnauthRoleName": "amplify-outageservice-dev-01922-unauthRole",
-      "StackName": "amplify-outageservice-dev-01922",
-      "StackId": "arn:aws:cloudformation:us-east-1:521776702104:stack/amplify-outageservice-dev-01922/cff51320-20e4-11ec-894a-0ae6e74961ab",
-      "AmplifyAppId": "d9b4o5o46z1c2"
+      "DeploymentBucketName": "amplify-outageservice-dev-135151-deployment",
+      "UnauthRoleName": "amplify-outageservice-dev-135151-unauthRole",
+      "StackName": "amplify-outageservice-dev-135151",
+      "StackId": "arn:aws:cloudformation:us-east-1:936471194299:stack/amplify-outageservice-dev-135151/78db7d70-26d6-11ec-b50a-1201a0a44b75",
+      "AmplifyAppId": "d28nct1zaat8dv"
     }
   }
 }

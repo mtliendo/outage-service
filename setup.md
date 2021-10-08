@@ -6,22 +6,22 @@
 
 ```graphql
 type Team
-  @model
-  @auth(
-    rules: [
-      { allow: public, operations: [read] }
-      { allow: private, provider: iam, operations: [create, update] }
-    ]
-  ) {
-  id: ID!
-  name: String!
-  description: String
-  healthStatus: HEALTH_STATUS!
+	@model
+	@auth(
+		rules: [
+			{ allow: public, operations: [read] }
+			{ allow: private, provider: iam, operations: [create, update] }
+		]
+	) {
+	id: ID!
+	name: String!
+	description: String
+	healthStatus: HEALTH_STATUS!
 }
 
 enum HEALTH_STATUS {
-  HEALTHY
-  UNHEALTHY
+	HEALTHY
+	UNHEALTHY
 }
 ```
 
@@ -63,7 +63,7 @@ enum HEALTH_STATUS {
 
 ```js
 {
-"id": "$.detail.id",
+"id": "$.id",
 "name": "$.detail.name",
 "description": "$.detail.description",
 "healthStatus": "$.detail.healthStatus",
@@ -78,7 +78,7 @@ enum HEALTH_STATUS {
 "query": "mutation UpdateTeam($input: UpdateTeamInput!) { updateTeam(input: $input) { id name description healthStatus createdAt updatedAt } }",
 "operationName": "UpdateTeam",
 "variables": {
-"UpdateTeamInput": {
+"input": {
 "id": "<id>",
 "name": "<name>",
 "description": "<description>",
@@ -128,3 +128,11 @@ enum HEALTH_STATUS {
 }
 
 ```
+
+// ! working create transformer and template:
+
+{"description":"$.detail.description","healthStatus":"$.detail.healthStatus","name":"$.detail.name","updatedAt":"$.time"}
+
+{ "query": "mutation CreateTeam($input: CreateTeamInput!) { createTeam(input: $input) { id } }", "operationName": "CreateTeam", "variables": { "input": { "healthStatus": <healthStatus>, "name": <name>, "description": <description> } } }
+
+{ "query": "mutation UpdateTeam($input: UpdateTeamInput!) { updateTeam(input: $input) { id } }", "operationName": "UpdateTeam", "variables": { "input": { "id": "0a097488-c26c-4816-8ceb-b0054c374217", "healthStatus": <healthStatus>, "name": <name>, "description": "successfully changed" } } }
